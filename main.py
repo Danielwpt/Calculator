@@ -20,38 +20,17 @@ first_num = float(input("Enter number: "))
 
 operation_choice = input("What operation: ")
 
-if operation_choice == "add":
-    second_num = float(input("Enter second number: "))
+second_num = float(input("Enter number: "))
 
-    addition(first_num, second_num)
-elif operation_choice == "minus":
-    second_num = float(input("Enter second number: "))
+operations = {
+    "addition": addition,
+    "minus": substration,
+    "times": multiply,
+    "divide": divide,
+}
 
-    substration(first_num, second_num)
-elif operation_choice == "times":
-    second_num = float(input("Enter second number: "))
+operations = operations[operation_choice]
 
-    multiply(first_num, second_num)
-elif operation_choice == "divide":
-    second_num = float(input("Enter second number: "))
+operations(first_num, second_num)
 
-    divide(first_num, second_num)
-else:
-    print(emp_list)
-
-get_total = sum(emp_list)
-
-continue_choice = input("Enter n to stop: ")
-
-if continue_choice == 'n':
-
-    print(get_total)
-
-else:
-    while(True):
-
-        third_number = float(input("Enter number: "))
-
-        get_total = get_total + third_number
-
-        print(get_total)
+print(emp_list)
